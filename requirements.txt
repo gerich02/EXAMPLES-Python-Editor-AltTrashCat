@@ -1,0 +1,5 @@
+AltTester-Driver==1.8.0
+pytest
+pytest-html
+assertpy==0.14
+virtualenv
