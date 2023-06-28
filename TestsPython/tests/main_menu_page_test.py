@@ -3,7 +3,7 @@ from pages.main_menu_page import MainMenuPage
 
 
 class TestMainMenuPage(TestBase):
-    def setUp(self):
+    def setup(self):
         self.main_menu_page = MainMenuPage(self.altdriver)
         self.main_menu_page.load()
 

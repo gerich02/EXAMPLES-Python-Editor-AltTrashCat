@@ -1,19 +1,18 @@
 import os
 import sys
 from alttester import AltDriver
-import unittest
 
 sys.path.append(os.path.dirname(__file__))
 
 
-class TestBase(unittest.TestCase):
+class TestBase():
     plaform = os.getenv('TESTS_PLATFORM')
-    
+
     @classmethod
-    def setUpClass(cls):
+    def setup_class(cls):
         print("In Base Test")
         cls.altdriver = AltDriver()
 
-    @classmethod    
-    def tearDownClass(cls):
+    @classmethod
+    def teardown_class(cls):
         cls.altdriver.stop()
