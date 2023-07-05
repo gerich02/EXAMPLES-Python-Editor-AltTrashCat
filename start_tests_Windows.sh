@@ -1,5 +1,5 @@
 start "" "App\TrashCatWindows\TrashCat.exe"
-
+sleep 3
 pip install -r requirements.txt
 
 python -m pytest TestsPython\\tests\\main_menu_page_test.py
