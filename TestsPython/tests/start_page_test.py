@@ -5,7 +5,7 @@ import pytest
 
 
 class TestStartPage(TestBase):
-    def setup(self):
+    def setup_method(self):
         self.start_page = StartPage(self.altdriver)
         self.start_page.load()
         self.main_menu_page = MainMenuPage(self.altdriver)
