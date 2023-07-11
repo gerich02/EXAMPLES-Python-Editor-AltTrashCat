@@ -24,18 +24,15 @@ class TestGamePlay(TestBase):
         # tearDown
         self.main_menu_page.load()
 
-    @pytest.mark.run(order=1)
     def test_game_play_page_displayed_correctly(self):
         assert (self.game_play_page.is_displayed())
 
-    @pytest.mark.depends(on=['test_game_play_page_displayed_correctly'])
     def test_game_can_be_paused_and_resumed(self):
         self.game_play_page.press_pause()
         assert (self.pause_overlay_page.is_displayed())
         self.pause_overlay_page.press_resume()
         assert (self.game_play_page.is_displayed())
 
-    @pytest.mark.depends(on=['test_game_play_page_displayed_correctly'])
     def test_game_can_be_paused_and_stopped(self):
         self.game_play_page.press_pause()
         self.pause_overlay_page.press_main_menu()
