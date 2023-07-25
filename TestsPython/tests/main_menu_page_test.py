@@ -1,10 +1,11 @@
-from tests.base_test import TestBase
+import pytest
 from pages.main_menu_page import MainMenuPage
 
 
-class TestMainMenuPage(TestBase):
-    def setup_method(self):
-        self.main_menu_page = MainMenuPage(self.altdriver)
+class TestMainMenuPage():
+    @pytest.fixture(autouse=True)
+    def setup_method(self, altdriver):
+        self.main_menu_page = MainMenuPage(altdriver)
         self.main_menu_page.load()
 
     def test_main_menu_page_loaded_correctly(self):

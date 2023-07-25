@@ -1,4 +1,3 @@
-from tests.base_test import TestBase
 from pages.main_menu_page import MainMenuPage
 from pages.game_play_page import GamePlayPage
 from pages.pause_overlay_page import PauseOverlayPage
@@ -7,18 +6,18 @@ from assertpy import assert_that
 import pytest
 
 
-class TestGamePlay(TestBase):
+class TestGamePlay():
 
     @pytest.fixture(autouse=True)
-    def before_and_after_test(self):
+    def before_and_after_test(self, altdriver):
         # setUp
-        self.main_menu_page = MainMenuPage(self.altdriver)
+        self.main_menu_page = MainMenuPage(altdriver)
         self.main_menu_page.load()
         self.main_menu_page.press_run()
         print("done sleeping")
-        self.game_play_page = GamePlayPage(self.altdriver)
-        self.pause_overlay_page = PauseOverlayPage(self.altdriver)
-        self.get_another_chance_page = GetAnotherChancePage(self.altdriver)
+        self.game_play_page = GamePlayPage(altdriver)
+        self.pause_overlay_page = PauseOverlayPage(altdriver)
+        self.get_another_chance_page = GetAnotherChancePage(altdriver)
 
         yield
         # tearDown
