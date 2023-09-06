@@ -3,3 +3,5 @@ pytest
 pytest-html
 assertpy==0.14
 virtualenv
+allure-pytest
+allure-combine
