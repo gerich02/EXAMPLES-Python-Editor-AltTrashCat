@@ -7,6 +7,7 @@ https://assetstore.unity.com/packages/essentials/tutorial-projects/endless-runne
 ### Running the tests on Windows or MacOS
 The tests are meant to be run on an Windows or MacOS device. Create a folder `App` under project.
 To start the tests, depending of your OS run:
+
 ❗ Starting with version 2.0.0, the AltTester Desktop must be running on your PC while the tests are running.
 
 - MacOS/Linux:
@@ -17,10 +18,22 @@ To start the tests, depending of your OS run:
 - Windows
     1. Install the [AltTesterDesktop](https://alttester.com/app/uploads/AltTester/desktop/AltTesterDesktopPackageWindows__v2.0.1.zip), then open it. 
     2. Create a folder `TrashCatWindows` under `App`. The app is provided at https://alttester.com/app/uploads/AltTester/TrashCat/TrashCatStandAlone2_0_1.zip and needs to be included unzipped under the App/TrashCatWindows/ folder.
+    3. run `./start_tests_Windows.sh` in your terminal
 
-`./start_tests_Windows.sh`
 This script will:
 
 - start the app on your device
 - run the tests
+- stop the app after the test are done
+
+## Allure
+### Run the tests:
+The same setup as in case of windows, but in the thirst step, use the following command  `start_tests_Windows_with_Allure.sh` instead of `./start_tests_Windows.sh`
+
+The `start_tests_Windows_with_Allure.sh`script will:
+- start the app on your device
+- create an `allure-report` folder
+- run the tests
+- generate the allure report
+- combine the allure report in a single html file
 - stop the app after the test are done
