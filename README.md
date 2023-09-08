@@ -28,7 +28,7 @@ This script will:
 
 ## Allure
 ### Run the tests:
-The same setup as in the case of Windows, but in the third step, use the following command  `start_tests_Windows_with_Allure.sh` instead of `./start_tests_Windows.sh`
+The same setup as in the case of Windows/MaOS, but in the third step, use the following command  `start_tests_Windows_with_Allure.sh` / `start_tests_Mac_with_Allure.sh` instead of `start_tests_Windows.sh` / `start_tests_Mac.sh`
 
 The `start_tests_Windows_with_Allure.sh`script will:
 - start the app on your device
