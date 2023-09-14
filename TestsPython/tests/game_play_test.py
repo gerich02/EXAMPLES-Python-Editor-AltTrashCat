@@ -1,27 +1,30 @@
-from tests.base_test import TestBase
 from pages.main_menu_page import MainMenuPage
 from pages.game_play_page import GamePlayPage
 from pages.pause_overlay_page import PauseOverlayPage
 from pages.get_another_chance_page import GetAnotherChancePage
 from assertpy import assert_that
+import pytest
 
 
-class TestGamePlay(TestBase):
+class TestGamePlay():
 
-    def setUp(self):
-        self.main_menu_page = MainMenuPage(self.altdriver)
+    @pytest.fixture(autouse=True)
+    def before_and_after_test(self, altdriver):
+        # setUp
+        self.main_menu_page = MainMenuPage(altdriver)
         self.main_menu_page.load()
         self.main_menu_page.press_run()
         print("done sleeping")
-        self.game_play_page = GamePlayPage(self.altdriver)
-        self.pause_overlay_page = PauseOverlayPage(self.altdriver)
-        self.get_another_chance_page = GetAnotherChancePage(self.altdriver)
+        self.game_play_page = GamePlayPage(altdriver)
+        self.pause_overlay_page = PauseOverlayPage(altdriver)
+        self.get_another_chance_page = GetAnotherChancePage(altdriver)
 
-    def tearDown(self):
+        yield
+        # tearDown
         self.main_menu_page.load()
 
     def test_game_play_page_displayed_correctly(self):
-        assert (self.game_play_page.is_displayed())    
+        assert (self.game_play_page.is_displayed())
 
     def test_game_can_be_paused_and_resumed(self):
         self.game_play_page.press_pause()
@@ -37,7 +40,8 @@ class TestGamePlay(TestBase):
     def test_avoiding_obstacles(self):
         self.game_play_page.avoid_obstacles(5)
     # check that player has 2 or 3 lives left (sometimes 1 life is lost right when stopping the tests)
-        assert_that(self.game_play_page.get_current_life()).described_as("player current life").is_greater_than(0) 
+        assert_that(self.game_play_page.get_current_life()).described_as(
+            "player current life").is_greater_than(0)
 
     def test_player_dies_when_obstacles_not_avoided(self):
         timeout = 10
