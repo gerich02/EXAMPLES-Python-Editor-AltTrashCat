@@ -1,6 +1,6 @@
 open App/TrashCatMac/TrashCat.app
-
-pip3 install -r requirements.txt
+sleep 3
+pip install -r requirements.txt
 
 echo "Create allure-report folder..."
 allure generate
