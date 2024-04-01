@@ -13,12 +13,12 @@ To start the tests, depending of your OS run:
 - MacOS/Linux:
     1. Install the [AltTesterDesktop](https://alttester.com/app/uploads/AltTester/desktop/AltTesterDesktopPackageMac__v2.0.1.zip), then open it.
     2. Create a folder `TrashCatMac` under `App`. The app is provided at https://alttester.com/app/uploads/AltTester/TrashCat/TrashCat.app.zip and needs to be included unzipped under the App/TrashCatMac/ folder.
-    3. run `./start_tests_Mac.sh` in your terminal
+    3. Run `./start_tests_Mac.sh` in your terminal.
 
 - Windows
     1. Install the [AltTesterDesktop](https://alttester.com/app/uploads/AltTester/desktop/AltTesterDesktopPackageWindows__v2.0.1.zip), then open it. 
     2. Create a folder `TrashCatWindows` under `App`. The app is provided at https://alttester.com/app/uploads/AltTester/TrashCat/TrashCatStandAlone2_0_1.zip and needs to be included unzipped under the App/TrashCatWindows/ folder.
-    3. run `./start_tests_Windows.sh` in your terminal
+    3. Run `./start_tests_Windows.sh` in your terminal.
 
 This script will:
 
@@ -27,8 +27,10 @@ This script will:
 - stop the app after the test are done
 
 ## Allure
-### Run the tests:
-The same setup as in the case of Windows/MaOS, but in the third step, use the following command  `start_tests_Windows_with_Allure.sh` / `start_tests_Mac_with_Allure.sh` instead of `start_tests_Windows.sh` / `start_tests_Mac.sh`
+As an option, in order to run and process the tests report you will need to install allure beforehand. You can do that by using npm and the following command `npm install -g allure-commandline --save-dev` or check Allure official page for more installation options.
+
+To run the tests, you can use the same setup as in the case of Windows/MacOS, but in the third step, use the following command  `start_tests_Windows_with_Allure.sh` / `start_tests_Mac_with_Allure.sh` instead of `start_tests_Windows.sh` / `start_tests_Mac.sh`.
+
 
 The `start_tests_Windows_with_Allure.sh`/ `start_tests_Mac_with_Allure.sh` script will:
 - start the app on your device
