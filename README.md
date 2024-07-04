@@ -1,33 +1,37 @@
 # Standalone Build with Python Tests
 
-This repository shows a few Python tests that use the page object model and AltTester Unity SDK to test the Unity endless runner sample:
+This repository shows a few Python tests that use the page object model and AltTester® Unity SDK to test the Unity Endless Runner sample:
 
 https://assetstore.unity.com/packages/essentials/tutorial-projects/endless-runner-sample-game-87901
 
 ### Running the tests on Windows or MacOS
-The tests are meant to be run on an Windows or MacOS device. Create a folder `App` under project.
-To start the tests, depending of your OS run:
+The tests are meant to be run on a Windows or MacOS device.
+Create a folder `App` under the project.
 
-❗ Starting with version 2.0.0, the AltTester Desktop must be running on your PC while the tests are running.
+To start the tests, depending on your OS run:
 
-- MacOS/Linux:
-    1. Install the [AltTesterDesktop](https://alttester.com/app/uploads/AltTester/desktop/AltTesterDesktopPackageMac__v2.0.1.zip), then open it.
-    2. Create a folder `TrashCatMac` under `App`. The app is provided at https://alttester.com/app/uploads/AltTester/TrashCat/TrashCat.app.zip and needs to be included unzipped under the App/TrashCatMac/ folder.
-    3. Run `./start_tests_Mac.sh` in your terminal.
+❗ Starting with version 2.0.0, the AltTester® Desktop must be running on your PC while the tests are running.
 
-- Windows
-    1. Install the [AltTesterDesktop](https://alttester.com/app/uploads/AltTester/desktop/AltTesterDesktopPackageWindows__v2.0.1.zip), then open it. 
-    2. Create a folder `TrashCatWindows` under `App`. The app is provided at https://alttester.com/app/uploads/AltTester/TrashCat/TrashCatStandAlone2_0_1.zip and needs to be included unzipped under the App/TrashCatWindows/ folder.
-    3. Run `./start_tests_Windows.sh` in your terminal.
+- **MacOS/Linux**:
+    1. Download and install the AltTester® Desktop for MacOS from [here](https://alttester.com/downloads/), then open it.
+    2. Instrument the TrashCat application using the latest version of AltTester® Unity SDK - for additional information you can follow [this tutorial](https://alttester.com/walkthrough-tutorial-upgrading-trashcat-to-2-0-x/#Instrument%20TrashCat%20with%20AltTester%20Unity%20SDK%20v.2.0.x)
+    3. Create a folder `TrashCatMac` under `App` and include the instrumented app under the App/TrashCatMac/ folder.
+    4. Run `./start_tests_Mac.sh` in your terminal.
+
+- **Windows**:
+    1. Download and install the AltTester® Desktop for Windows from [here](https://alttester.com/downloads/), then open it.
+    2. Instrument the TrashCat application using the latest version of AltTester® Unity SDK - for additional information you can follow [this tutorial](https://alttester.com/walkthrough-tutorial-upgrading-trashcat-to-2-0-x/#Instrument%20TrashCat%20with%20AltTester%20Unity%20SDK%20v.2.0.x)
+    3. Create a folder `TrashCatWindows` under `App` and include the instrumented app under the App/TrashCatWindows/ folder.
+    4. Run `./start_tests_Windows.sh` in your terminal.
 
 This script will:
 
 - start the app on your device
 - run the tests
-- stop the app after the test are done
+- stop the app after the tests are done
 
 ## Allure
-As an option, in order to run and process the tests report you will need to install allure beforehand. You can do that by using npm and the following command `npm install -g allure-commandline --save-dev` or check Allure official page for more installation options.
+As an option, to run and process the test report you will need to install Allure beforehand. You can do that by using npm and the following command `npm install -g allure-commandline --save-dev` or check the Allure official page for more installation options.
 
 To run the tests, you can use the same setup as in the case of Windows/MacOS, but in the third step, use the following command  `start_tests_Windows_with_Allure.sh` / `start_tests_Mac_with_Allure.sh` instead of `start_tests_Windows.sh` / `start_tests_Mac.sh`.
 
@@ -36,6 +40,6 @@ The `start_tests_Windows_with_Allure.sh`/ `start_tests_Mac_with_Allure.sh` scrip
 - start the app on your device
 - create an `allure-report` folder
 - run the tests
-- generate the allure report
-- combine the allure report in a single html file
-- stop the app after the test are done
+- generate the Allure report
+- combine the Allure report in a single HTML file
+- stop the app after the tests are done
