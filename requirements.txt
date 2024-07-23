@@ -1,7 +1,7 @@
-AltTester-Driver==2.0.1
+AltTester-Driver
 pytest
 pytest-html
-assertpy==0.14
+assertpy
 virtualenv
 allure-pytest
 allure-combine
