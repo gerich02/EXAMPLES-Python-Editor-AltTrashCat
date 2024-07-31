@@ -1,5 +1,5 @@
 from alttester import By
-
+import time
 from pages.base_page import BasePage
 
 
@@ -15,13 +15,31 @@ class GamePlayPage(BasePage):
     @property
     def character(self):
         return self.altdriver.wait_for_object(By.NAME, 'PlayerPivot', timeout=2)
+    
+    @property
+    def countdown(self):
+        return self.altdriver.wait_for_object(By.NAME, 'CountDown', timeout=8)
 
     @property
     def obstacles(self):
         return self.altdriver.find_objects_which_contain(By.NAME, 'Obstacle')
-
+    
+    @property
+    def slide_tuto_animation(self):
+        return self.altdriver.wait_for_object(By.PATH, '/UICamera/Game/Tutorials/SlideTuto/Animation', timeout=10)
+    
+    @property
+    def slide_tuto_text(self):
+        return self.altdriver.wait_for_object(By.PATH, '/UICamera/Game/Tutorials/SlideTuto/Text', timeout=10)
+    
     def is_displayed(self):
         return self.pause_button and self.character
+    
+    def is_countdown_displayed(self):
+        return self.countdown
+    
+    def is_tutorial_displayed(self):
+        return self.slide_tuto_animation and self.slide_tuto_text
 
     def press_pause(self):
         self.pause_button.tap()

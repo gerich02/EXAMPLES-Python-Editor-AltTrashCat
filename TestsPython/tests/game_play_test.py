@@ -26,6 +26,14 @@ class TestGamePlay():
     def test_game_play_page_displayed_correctly(self):
         assert (self.game_play_page.is_displayed())
 
+    def test_countdown_displayed_correctly(self):
+        """Новый тест на наличие обратного отсчета."""
+        assert (self.game_play_page.is_countdown_displayed())
+
+    def test_tutorial_displayed_correctly(self):
+        """Новый тест на наличие подсказок."""
+        assert (self.game_play_page.is_tutorial_displayed())
+
     def test_game_can_be_paused_and_resumed(self):
         self.game_play_page.press_pause()
         assert (self.pause_overlay_page.is_displayed())
